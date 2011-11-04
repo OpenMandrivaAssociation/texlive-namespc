@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/namespc
+# catalog-date 2006-12-22 14:37:19 +0100
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-namespc
 Version:	20061222
 Release:	1
@@ -43,6 +49,7 @@ without defining them globally.
 %doc %{_texmfdistdir}/doc/latex/namespc/namespc.pdf
 #- source
 %doc %{_texmfdistdir}/source/latex/namespc/namespc.dtx
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -53,3 +60,5 @@ without defining them globally.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
