@@ -50,3 +50,17 @@ without defining them globally.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20061222-2
++ Revision: 754246
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20061222-1
++ Revision: 719099
+- texlive-namespc
+- texlive-namespc
+- texlive-namespc
+- texlive-namespc
+
