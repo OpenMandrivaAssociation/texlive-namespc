@@ -5,8 +5,8 @@
 # catalog-license lppl
 # catalog-version undef
 Name:		texlive-namespc
-Version:	20061222
-Release:	10
+Version:	20170414
+Release:	1
 Summary:	Rudimentary c++-like namespaces in LaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/namespc
