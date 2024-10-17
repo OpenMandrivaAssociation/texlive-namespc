@@ -3,7 +3,7 @@ Version:	15878
 Release:	2
 Summary:	Rudimentary c++-like namespaces in LaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/namespc
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/namespc
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/namespc.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/namespc.doc.r%{version}.tar.xz
