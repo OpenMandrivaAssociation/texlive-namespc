@@ -1,47 +1,22 @@
-Name:		texlive-namespc
-Version:	15878
-Release:	2
-Summary:	Rudimentary c++-like namespaces in LaTeX
+%global tl_name namespc
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
+Summary:	Rudimentary C++-like namespaces in LaTeX
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/namespc
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/namespc.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/namespc.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/namespc.source.r%{version}.tar.xz
+License:	lppl1.2
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/namespc.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/namespc.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/namespc.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The namespc package adds rudimentary c++-like namespace
-functionality to LaTeX. It may be used to declare local LaTeX
-commands, which can be made accessible in a later contexts
-without defining them globally.
+The namespc package adds rudimentary C++-like namespace functionality to
+LaTeX. It may be used to declare local LaTeX commands, which can be made
+accessible in a later contexts without defining them globally.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/namespc/namespc.sty
-%doc %{_texmfdistdir}/doc/latex/namespc/README
-%doc %{_texmfdistdir}/doc/latex/namespc/namespc.pdf
-#- source
-%doc %{_texmfdistdir}/source/latex/namespc/namespc.dtx
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
